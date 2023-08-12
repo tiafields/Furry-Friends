@@ -1,0 +1,22 @@
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class ="create-dog content">
+        <form>
+            <label for = "title">Dog Title: </label>
+            <input type="text" id="title" required>
+
+            <label for = "snippet">Dog Snippet: </label>
+            <input type="text" id="snippet" required>
+
+            <label for = "body">Dog Body:  </label>
+            <textarea id= "body" required></textarea>
+            <button>Submit</button>
+            
+        </form>
+        
+    </div>
+</body>
+<%- include('./partials/footer.ejs') %>
+</html>
