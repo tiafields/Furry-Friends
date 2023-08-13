@@ -1,14 +1,21 @@
 //requiring express
 const express = require('express');
 
+//requiring morgan 
+const morgan = require('morgan');  
 //set up express app
 const app = express();
+
 
 //register view engine 
 app.set('view engine', 'ejs');
 
 //listen for requests
 app.listen(3000);
+
+//middleware
+app.use(express.static('public'));
+app.use(morgan('dev'));
 
 app.get('/', (req, res) =>{
     const dogs =[
@@ -20,9 +27,7 @@ app.get('/', (req, res) =>{
     res.render('index', {dogs});
 })
 
-app.get('/about', (req, res) =>{
-    res.render('about');
-})
+
 
 app.get('/dogs/create', (req, res) => {
     res.render('create');

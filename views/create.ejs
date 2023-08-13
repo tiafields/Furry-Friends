@@ -2,16 +2,105 @@
     <%- include('./partials/head.ejs') %>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <div class ="create-dog content">
+    <div class ="create-blog content">
+       
         <form>
-            <label for = "title">Dog Title: </label>
-            <input type="text" id="title" required>
+            <h1> New Dog Profile Form</h1>
 
-            <label for = "snippet">Dog Snippet: </label>
-            <input type="text" id="snippet" required>
+            <label for = "humanName">Human Name: </label>
+            <input type="text" id="humanName" name="humanName" required>
+            
+            <label for = "address">Address: </label>
+            <input type="text" id="address" name="address" required>
 
-            <label for = "body">Dog Body:  </label>
-            <textarea id= "body" required></textarea>
+            <label for = "dogName">Dog Name: </label>
+            <input type="text" id="dogName" name="dogName" required>
+
+            <label for = "dogBreed">Dog Breed: </label>
+            <input type="text" id="dogBreed" name="dogBreed" required>
+
+            <label for ="dogNeuteredOrSpayed">Neutered or Spayed:</label>
+            <select id="dogNeuteredOrSpayed" name="dogNeuteredOrSpayed">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="unknown">Unknown</option>
+              </select>
+
+            <label for="dogFriendly">Dog Friendly: </label>
+            <select id="dogFriendly" name="dogFriendly">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="unknown">Unknown</option>
+            </select>
+
+            <label for="peopleFriendly">People Friendly: </label>
+            <select id="peopleFriendly" name="peopleFriendly">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="unknown">Unknown</option>
+            </select>
+
+            <label for = "feedingDetails">Feeding Details: </label>
+            <textarea id= "feedingDetails" name="feedingDetails" placeholder = "Feeding Amount, Dry or Wet Food?"required></textarea>
+            
+
+            <label for = "treatDetails">Treat Details: </label>
+            <textarea id= "treatDetails" name ="treatDetails" required></textarea>
+
+            <label for = "medication">Medication Details:  </label>
+            <textarea id= "medication" name = "medication" placeholder="Pills/Liquid, what do they take it with?"></textarea>
+       
+
+            <label for = "walkingSchedule">Walking Schedule: </label>
+            <textarea id= "walkingSchedule" name="walkingSchedule" required></textarea>
+         
+
+            <label for = "letOutDetails"> Let Out Details: </label>
+            <textarea id= "letOutDetails" name="letOutDetails" required></textarea>
+
+            <label for = "hidingSpotDetails"> Hiding Spot/Safe Space Location: </label>
+            <textarea id= "hidingSpotDetails" name="hidingSpotDetails" required></textarea>
+
+            <label for ="sleepingLocation"> Dog's Sleeping Location: </label>
+            <textarea id= "sleepingLocation" name="sleepingLocation" required></textarea>
+
+            <label for ="dogFears"> Dog's Fears </label>
+            <textarea id= "dogFears" name="dogFears" required></textarea>
+
+            <label for = "houseDetails"> House Details: Alarm Code, Plants, Trash, Mail, etc.  </label>
+            <textarea id= "houseDetails" name="houseDetails" required></textarea>
+
+            <label for = "otherInfo"> Other Details You Want Me To Know:  </label>
+            <textarea id= "otherInfo" name="otherInfo" required></textarea>
+
+            <label for = "vetName"> Vet Name: </label>
+            <input type= "text" name="vetName" required></textarea>
+           
+
+            <label for = "vetAddress"> Vet Address: </label>
+            <input type="text" id="vetAddress" name="vetAddress" required>
+
+            <label for = "vetPhoneNumber"> Vet Phone Number: </label>
+            <input type="text" id="vetPhoneNumber" name="vetPhoneNumber" required>
+
+            <label for ="emergencyContactName1">Emergency Conctact #1 Name: </label>
+            <input type="text" id="emergencyContactName1" name="emergencyContactName1" required>
+
+            <label for ="emergencyContact1Relationship">Relationship: </label>
+            <input type="text" id="emergencyContact1Relationship" name="emergencyContact1Relationship" required>
+
+            <label for="emergencyContact1Phone">Phone Number:</label>
+            <input type="text" id="emergencyContact1Phone" name="emergencyContact1Phone" required>
+
+            <label for ="emergencyContactName2">Emergency Conctact #2 Name:</label>
+            <input type="text" id="emergencyContactName2" name="emergencyContactName2" required>
+
+            <label for ="emergencyContact2Relationship">Relationship: </label>
+            <input type="text" id="emergencyContact2Relationship" name="emergencyContact2Relationship" required>
+
+            <label for="emergencyContact2Phone">Phone Number:</label>
+            <input type="text" id="emergencyContact2Phone" name="emergencyContact2Phone" required>
+
             <button>Submit</button>
             
         </form>
