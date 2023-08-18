@@ -1,21 +1,25 @@
-<!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head.ejs') %>
+<%- include("./partials/head.ejs") %>
+
 <body>
-    <%- include('./partials/nav.ejs') %>
-</body>
+  <%- include("./partials/nav.ejs") %>
 
-    <div class = "blogs content">
-    <h2>Profiles</h2>
-        <% if (dogs.length >0) { %>
-        <% dogs.forEach(dog => { %>
-        <h3 class = "title"><%= dog.title %></h3>
-        <p class = "snippet"><%= dog.snippet %></p>
+  <div class="blogs content">
+    <h2>All Dogs</h2>
 
-    <% }) %>
-    <% } else {%>
-        <p>There are no profiles to display. </p>
+    <% if (dogs.length > 0) { %>
+      <% dogs.forEach(dog => { %>
+
+        <h3 class="title">Dog: <%= dog.dogName %></h3>
+        <p class="snippet">Human:<%= dog.humanName %></p>
+
+      <% }) %>
+    <% } else { %>
+      <p>There are no dogs to display...</p>
     <% } %>
-    </div>
-    <%- include('./partials/footer.ejs') %>   
+    
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
 </html>

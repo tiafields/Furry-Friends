@@ -5,6 +5,7 @@
       padding: 0 20px;
       font-family: 'Quicksand';
       max-width: 1200px;
+      background-color: #ffcbd2;
     }
     p, h1, h2, h3, a, ul{
       margin: 0;
@@ -79,7 +80,7 @@
     }
     .create-blog button{
       margin-top: 20px;
-      background: crimson;
+      background: #ffa447;
       color: white;
       padding: 6px;
       border: 0;

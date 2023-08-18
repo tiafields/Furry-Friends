@@ -3,32 +3,59 @@ const express = require('express');
 
 //requiring morgan 
 const morgan = require('morgan');  
+
+//requiring mongoose 
+const mongoose = require('mongoose');
+
+//requiring Dog Schema
+const Dog = require('./models/dog'); 
+ 
 //set up express app
 const app = express();
 
+//connect to Mongo DB
+
+const dbURI = 'mongodb+srv://tiafields128:RUvSrUcwS775bWvZ@furryfriends.zcyiu2d.mongodb.net/DogProfiles?retryWrites=true&w=majority';
+mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
+    .then((result) => app.listen(3000))
+    .catch((err) => console.log(err));
 
 //register view engine 
 app.set('view engine', 'ejs');
 
-//listen for requests
-app.listen(3000);
+
 
 //middleware
 app.use(express.static('public'));
+app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
 
 app.get('/', (req, res) =>{
-    const dogs =[
-        /* {title: 'test', snippet: 'snippet'},
-        {title: 'test2', snippet: 'snippet2'},
-        {title: 'test3', snippet: 'snippet3'}, */
-
-    ];
-    res.render('index', {dogs});
+    res.redirect('/dogs' );
 })
 
+//dog routes 
 
+app.get('/dogs', (req, res) => {
+    Dog.find().sort({dogName: 1})
+    .then((result) => {
+        res.render('index', {dogs: result})
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+});
 
+app.post('/dogs', (req, res) => {
+    const dog = new Dog(req.body)
+    dog.save()
+        .then((result) => {
+            res.redirect('/dogs');
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+})
 app.get('/dogs/create', (req, res) => {
     res.render('create');
 });

@@ -4,7 +4,7 @@
     <%- include('./partials/nav.ejs') %>
     <div class ="create-blog content">
        
-        <form>
+        <form action= "/dogs" method = "POST">
             <h1> New Dog Profile Form</h1>
 
             <label for = "humanName">Human Name: </label>
@@ -19,30 +19,48 @@
             <label for = "dogBreed">Dog Breed: </label>
             <input type="text" id="dogBreed" name="dogBreed" required>
 
+            <label for = "dogBirthday">Dog Date of Birth: </label>
+            <input type="text" id="dogBirthday" name="dogBirthday" required>
+
             <label for ="dogNeuteredOrSpayed">Neutered or Spayed:</label>
             <select id="dogNeuteredOrSpayed" name="dogNeuteredOrSpayed">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-                <option value="unknown">Unknown</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Unknown">Unknown</option>
               </select>
 
             <label for="dogFriendly">Dog Friendly: </label>
             <select id="dogFriendly" name="dogFriendly">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-                <option value="unknown">Unknown</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Unknown">Unknown</option>
             </select>
-
+            
             <label for="peopleFriendly">People Friendly: </label>
             <select id="peopleFriendly" name="peopleFriendly">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-                <option value="unknown">Unknown</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Unknown">Unknown</option>
             </select>
-
-            <label for = "feedingDetails">Feeding Details: </label>
-            <textarea id= "feedingDetails" name="feedingDetails" placeholder = "Feeding Amount, Dry or Wet Food?"required></textarea>
             
+            <label for="kidFriendly">Kid Friendly: </label>
+            <select id="kidFriendly" name="kidFriendly">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Unknown">Unknown</option>
+            </select><br>
+
+            <lable for = "dogFoodBrand"> Dog Food Brand: </lable>
+            <input type="text" name="dogFoodBrand" required></textarea>
+
+            <lable for = "feedingTimes"> Feeding Times: </lable>
+            <input type="text" name="feedingTimes" required></textarea>
+
+            <lable for = "amountOfFood"> Food Amount Given: </lable>
+            <input type="text" name="amountOfFood" required></textarea>
+        
+            <label for = "otherFeedingDetails">Any Other Feeding Details: </label>
+            <textarea id= "otherFeedingDetails" name="otherFeedingDetails" placeholder = "Special Requests?"required></textarea>
 
             <label for = "treatDetails">Treat Details: </label>
             <textarea id= "treatDetails" name ="treatDetails" required></textarea>
@@ -64,18 +82,23 @@
             <label for ="sleepingLocation"> Dog's Sleeping Location: </label>
             <textarea id= "sleepingLocation" name="sleepingLocation" required></textarea>
 
+            <label for ="forbiddenAreas"> Dog's Forbidden Location(s) </label>
+            <textarea id= "forbiddenAreas" name="forbiddenAreas" required></textarea>
+
             <label for ="dogFears"> Dog's Fears </label>
             <textarea id= "dogFears" name="dogFears" required></textarea>
+
+            <label for ="dogAllergies"> Dog's Allergies </label>
+            <textarea id= "dogAllergies" name="dogAllergies" required></textarea>
 
             <label for = "houseDetails"> House Details: Alarm Code, Plants, Trash, Mail, etc.  </label>
             <textarea id= "houseDetails" name="houseDetails" required></textarea>
 
-            <label for = "otherInfo"> Other Details You Want Me To Know:  </label>
+            <label for = "otherInfo"> Other Details You Want Me To Know / Special Requests:  </label>
             <textarea id= "otherInfo" name="otherInfo" required></textarea>
 
             <label for = "vetName"> Vet Name: </label>
             <input type= "text" name="vetName" required></textarea>
-           
 
             <label for = "vetAddress"> Vet Address: </label>
             <input type="text" id="vetAddress" name="vetAddress" required>
@@ -83,23 +106,25 @@
             <label for = "vetPhoneNumber"> Vet Phone Number: </label>
             <input type="text" id="vetPhoneNumber" name="vetPhoneNumber" required>
 
-            <label for ="emergencyContactName1">Emergency Conctact #1 Name: </label>
-            <input type="text" id="emergencyContactName1" name="emergencyContactName1" required>
+            <label for = "boardingName"> Bording Name: </label>
+            <input type="text" id="boardingName" name="boardingName" required>
 
-            <label for ="emergencyContact1Relationship">Relationship: </label>
-            <input type="text" id="emergencyContact1Relationship" name="emergencyContact1Relationship" required>
+            <label for = "boardingAddress">Boarding Address </label>
+            <input type= "text" name="boardingAddress" required></textarea>
 
-            <label for="emergencyContact1Phone">Phone Number:</label>
-            <input type="text" id="emergencyContact1Phone" name="emergencyContact1Phone" required>
+            <label for = "boardingPhoneNum"> Boarding Phone Number: </label>
+            <input type= "text" name="boardingPhoneNum" required></textarea>
 
-            <label for ="emergencyContactName2">Emergency Conctact #2 Name:</label>
-            <input type="text" id="emergencyContactName2" name="emergencyContactName2" required>
+            <label for ="emergencyContactName">Emergency Conctact Name: </label>
+            <input type="text" id="emergencyContactName" name="emergencyContactName" required>
 
-            <label for ="emergencyContact2Relationship">Relationship: </label>
-            <input type="text" id="emergencyContact2Relationship" name="emergencyContact2Relationship" required>
+            <label for ="emergencyContactRelationship">Relationship: </label>
+            <input type="text" id="emergencyContactRelationship" name="emergencyContactRelationship" required>
 
-            <label for="emergencyContact2Phone">Phone Number:</label>
-            <input type="text" id="emergencyContact2Phone" name="emergencyContact2Phone" required>
+            <label for="emergencyContactPhone">Phone Number:</label>
+            <input type="text" id="emergencyContactPhone" name="emergencyContactPhone" required>
+
+
 
             <button>Submit</button>
             
