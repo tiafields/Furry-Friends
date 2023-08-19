@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class = "details content">
+        <h1>DOG PROFILE: <%= dog.dogName %></h1><br>
+            <div class = "content">
+                <h2>General Information:</h2>
+                <h3>Owner:</h3>
+                    <p> <%= dog.humanName %></p>
+                <h3>Address:</h3>
+                    <p><%= dog.address %></p>
+                <h3> Dog Breed:</h3>
+                    <p> <%= dog.dogBreed %></p>
+                <h3> Neutered or Spayed: </h3>
+                    <p><%= dog.dogNeuteredOrSpayed %></p><br>
+
+                <h2>Friendliness</h2>
+                <h3> Dog Friendly: </h3>
+                    <p><%= dog.dogFriendly %></p>
+                <h3> People Friendly: </h3>
+                    <p><%= dog.peopleFriendly %></p>
+                <h3> Kid Friendly: </h3>
+                    <p><%= dog.kidFriendly %></p><br>
+                
+                <h2>Feeding Information</h2>
+                <h3> Dog Food Brand: </h3>
+                    <p><%= dog.dogFoodBrand %></p>
+                <h3> Dog Feeding Times:</h3>
+                    <p> <%= dog.feedingTimes %></p>
+                <h3> Amount of Food: </h3>
+                    <p><%= dog.amountOfFood %></p>
+                <h3> Treat Brands / Details </h3>
+                    <p><%= dog.treatDetails %></p>
+                <h3> Other Feeding Details: </h3>
+                    <p><%= dog.otherFeedingDetails %></p><br>
+                
+
+                <h2>Other Information:</h2>
+                <h3> Medication: </h3>
+                    <p><%= dog.medication %></p><br>
+                <h3> Walking Schedule: </h3>
+                    <p><%= dog.walkingSchedule %></p><br>
+                <h3> Let Out Details: </h3>
+                    <p><%= dog.letOutDetails %></p><br>
+                <h3>Hiding Spot Details: </h3>
+                    <p><%= dog.hidingSpotDetails %></p><br>
+                <h3> Sleeping Location: </h3>
+                    <p><%= dog.sleepingLocation %></p><br>
+                <h3> Forbidden Areas:</h3>
+                    <p><%= dog.forbiddenAreas %></p><br>
+                <h3> Fears: </h3>
+                    <p><%= dog.dogFears %></p><br>
+                <h3> Allergies: </h3>
+                    <p><%= dog.dogAllergies %></p><br> 
+                <h3> House Details: </h3>
+                    <p><%= dog.houseDetails %></p><br>
+                <h3> Other Info: </h3>
+                    <p><%= dog.otherInfo %></p><br>
+
+                <h2>Vet Information:</h2>
+                <h3> Vet Name: </h3>
+                    <p><%= dog.vetName %></p>
+                <h3>Vet Address: </h3>
+                    <p><%= dog.vetAddress %></p>
+                <h3> Vet Phone Number: </h3>
+                    <p><%= dog.vetPhoneNumber %></p><br> 
+
+                <h2>Boarding Information</h2>
+                <h3>Boarding Name: </h3>
+                    <p><%= dog.boardingName %></p>
+                <h3> Boarding Address: </h3>
+                    <p><%= dog.boardingAddress %></p>
+                <h3> Boarding Phone Number:</h3>
+                    <p><%= dog.boardingPhoneNum %></p><br> 
+                <h2>Emergency Contact Information</h2>
+                <h3> Emergency Contact Name: </h3>
+                    <p><%= dog.emergencyContactName %></p>
+                <h3> Emergency Contact Relationship:</h3>
+                    <p> <%= dog.emergencyContactRelationship %></p>
+                <h3> Emergency Contact Phone Number: </h3>
+                    <p><%= dog.emergencyContactPhone %></p>
+            </div>
+    </div>
+</body>
+    <%- include('./partials/footer.ejs') %>
+</html>

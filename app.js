@@ -47,7 +47,8 @@ app.get('/dogs', (req, res) => {
 });
 
 app.post('/dogs', (req, res) => {
-    const dog = new Dog(req.body)
+    const dog = new Dog(req.body);
+
     dog.save()
         .then((result) => {
             res.redirect('/dogs');
@@ -55,10 +56,24 @@ app.post('/dogs', (req, res) => {
         .catch((err) => {
             console.log(err);
         })
-})
+});
+
 app.get('/dogs/create', (req, res) => {
     res.render('create');
 });
+
+app.get('/dogs/:id', (req, res) => {
+    const id = req.params.id; 
+    Dog.findById(id)
+    .then(result => {
+        res.render('details', {dog: result});
+    })
+    .catch(err => {
+        console.log(err);
+    });
+});
+ 
+
 
 app.use((req, res) => {
     res.status(404).render('404');
