@@ -62,6 +62,8 @@ app.get('/dogs/create', (req, res) => {
     res.render('create');
 });
 
+
+
 app.get('/dogs/:id', (req, res) => {
     const id = req.params.id; 
     Dog.findById(id)
@@ -73,8 +75,17 @@ app.get('/dogs/:id', (req, res) => {
     });
 });
  
+app.delete('/dogs/:id', (req, res) => {
+    const id = req.params.id;
 
-
+    Dog.findByIdAndDelete(id)
+    .then(result => {
+        res.json({redirect: '/dogs'});
+    })
+    .catch(err => {
+        console.log(err);
+    })
+})
 app.use((req, res) => {
     res.status(404).render('404');
 })
