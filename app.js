@@ -14,10 +14,15 @@ const Dog = require('./models/dog');
 const app = express();
 
 //connect to Mongo DB
-
-const dbURI = 'mongodb+srv://tiafields128:RUvSrUcwS775bWvZ@furryfriends.zcyiu2d.mongodb.net/DogProfiles?retryWrites=true&w=majority';
+console.log(`Connecting to mongo`);
+const dbURI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@cluster0.sxxeagv.mongodb.net`;
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
-    .then((result) => app.listen(3000))
+    .then((result) => {
+        console.log('MongoDB connected');
+        app.listen(3000, () => {
+            console.log('App listening on port 3000');
+        });
+    })
     .catch((err) => console.log(err));
 
 //register view engine 
