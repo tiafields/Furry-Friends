@@ -13,14 +13,16 @@ const Dog = require('./models/dog');
 //set up express app
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 //connect to Mongo DB
 console.log(`Connecting to mongo`);
 const dbURI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@cluster0.sxxeagv.mongodb.net`;
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => {
         console.log('MongoDB connected');
-        app.listen(3000, () => {
-            console.log('App listening on port 3000');
+        app.listen(PORT, () => {
+            console.log(`App listening on port ${PORT}`);
         });
     })
     .catch((err) => console.log(err));
